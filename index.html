@@ -53,7 +53,7 @@
     display: none;
     width: 100%;
     max-width: 480px;
-    padding: 24px 20px 40px;
+    padding: 24px 16px 40px;
     min-height: 100vh;
     flex-direction: column;
     align-items: center;
@@ -86,10 +86,11 @@
     background: rgba(255,255,255,0.72);
     backdrop-filter: blur(12px);
     border-radius: 24px;
-    padding: 28px 24px;
+    padding: 24px 16px;
     width: 100%;
     box-shadow: 0 8px 32px var(--shadow), 0 1px 0 rgba(255,255,255,0.8) inset;
     border: 1px solid rgba(255,255,255,0.6);
+    overflow: hidden;
     overflow: hidden;
   }
 
@@ -107,15 +108,9 @@
     width: 100%;
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 12px;
-    padding: 12px 14px;
-    border-radius: 14px;
-    background: rgba(168,216,240,0.18);
-    border: 1.5px solid rgba(168,216,240,0.35);
-    transition: background 0.2s, border-color 0.2s;
+    gap: 10px;
+    margin-bottom: 10px;
   }
-  .choice-row:hover { background: rgba(168,216,240,0.3); }
   .choice-row:last-child { margin-bottom: 0; }
 
   /* Custom checkbox */
@@ -158,18 +153,20 @@
   .choice-input {
     flex: 1;
     min-width: 0;
-    border: none;
-    background: transparent;
+    border: 1.5px solid rgba(168,216,240,0.6);
+    background: rgba(255,255,255,0.7);
+    border-radius: 10px;
     font-family: 'Zen Kaku Gothic New', sans-serif;
     font-size: 0.95rem;
     color: var(--deep);
     outline: none;
-    padding: 2px 0;
-    border-bottom: 1.5px solid rgba(168,216,240,0.5);
-    transition: border-color 0.2s;
-    width: 100%;
+    padding: 10px 12px;
+    transition: border-color 0.2s, box-shadow 0.2s;
   }
-  .choice-input:focus { border-bottom-color: var(--ocean); }
+  .choice-input:focus {
+    border-color: var(--ocean);
+    box-shadow: 0 0 0 3px rgba(46,158,214,0.15);
+  }
   .choice-input::placeholder { color: rgba(26,111,173,0.3); }
 
   /* ─── ERROR ─── */
@@ -179,7 +176,7 @@
     font-size: 0.82rem;
     font-weight: 700;
     margin-top: 14px;
-    padding: 10px 14px;
+    padding: 10px 10px;
     background: rgba(224,85,85,0.08);
     border-radius: 10px;
     border-left: 3px solid var(--error);
@@ -658,5 +655,6 @@ window.addEventListener('resize', () => {
   if (rouletteScreen.classList.contains('active')) resizeCanvas();
 });
 </script>
+
 </body>
 </html>
